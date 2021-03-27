@@ -1,0 +1,299 @@
+/* ================================================= Variables ========================================================== */
+
+:root {
+    /* ============Colors============== */
+    
+    --first-color: #14192D;
+    --second-color: #D90062;
+    --second-transparent-color: rgba(217, 0, 98, .5);
+    --text-color: #5E8BA5;
+    --white-color: #fff;
+    --white-transparent-color: rgba(255, 255, 255, .75);
+    --black-color: #000;
+    --black-transparent-color: rgba(0, 0, 0, .5);
+    
+    /* ============Font============== */
+    
+    --font-icon-primary: 2rem;
+
+    /* ============Margins & paddings============== */
+    
+    --mp-small: .5rem;
+    --mp-1: 1rem;
+    --mp-2: 2rem;
+    --mp-3: 3rem;
+    --mp-4: 4rem;
+    --mp-5: 5rem;
+    
+    /* ============Styles============== */
+    
+    --header-height: 8vh;
+    --radius-small: .5rem;
+    --radius-big: .75rem;
+}
+
+/* ================================================= Reset ========================================================== */
+
+html {
+    overflow-x: hidden;
+    box-sizing: border-box;
+    font-size: 16px;
+    color: var(--white-color);
+    scroll-behavior: smooth;
+}
+
+body {
+    overflow-x: inherit;
+    background-color: var(--first-color);
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    cursor: pointer;
+}
+
+i { cursor: pointer }
+
+img {
+    max-width: 100%;
+}
+
+span { color: var(--text-color) }
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0;
+    padding: 0;
+    outline: none;
+}
+
+main > section {
+    padding: var(--header-height) 0;
+}
+
+/* ================================================= Components ========================================================== */
+
+
+/* ============ btn-primary ============== */
+
+.btn-primary {
+    color: var(--second-transparent-color);
+    padding: var(--mp-small) var(--mp-1);
+    background-color: var(--white-transparent-color);
+    border-radius: var(--radius-small);
+    border: none;
+    transition: all .5s ease-in-out;
+}
+
+.btn-primary:hover {
+    color: var(--second-color);
+    background-color: var(--white-color);
+    transform: scale(1.1);
+}
+
+/* ============ card ============== */
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    min-height: 180px;
+    margin: var(--mp-2) 0;
+    padding: var(--mp-1) var(--mp-small);
+    box-shadow: .25rem .25rem 1rem var(--black-color);
+}
+
+/* ================================================= Utilities ========================================================== */
+
+.container-limiter {
+    width: 95%;
+    margin: auto;
+}
+
+.content-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.shadow { box-shadow: .25rem .25rem 1rem rgba(0, 0, 0, .25) }
+
+/* ================================================= Styles ========================================================== */
+
+/* ============ Header ============== */
+
+.main-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 100;
+    width: 100%;
+    height: var(--header-height);
+    background-color: var(--second-color);
+}
+
+.main-header > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+
+.main-header i {
+    font-size: var(--font-icon-primary);
+    color: var(--white-color);
+}
+
+
+.menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+    clip-path: inset(0 0 100% 0);
+    background-color: var(--second-transparent-color);
+    text-align: center;
+    border-bottom-left-radius: var(--radius-big);
+    border-bottom-right-radius: var(--radius-big);
+    transition: clip-path .5s ease-in-out;
+}
+
+.menu.active { clip-path: inset(0 0 0 0) }
+
+.menu a {
+    width: 100%;
+    color: var(--white-color);
+    margin: var(--mp-small) 0;
+    padding: var(--mp-small) 0;
+    text-decoration: none;
+}
+
+.menu a:hover {
+    background-color: var(--white-transparent-color);
+}
+
+/* ============ Home ============== */
+
+.home {
+    position: relative;
+    height: calc(100vh - var(--header-height));
+    background: url(../img/background-home.png) no-repeat fixed center/cover;
+    margin-top: var(--header-height);
+}
+
+.home > div {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--black-transparent-color);
+}
+
+/* ============ About ============== */
+
+.about {
+    min-height: 100vh;
+    text-align: center;
+}
+
+.presentation {
+    margin-bottom: var(--mp-5);
+}
+
+.presentation p,
+.presentation > svg {
+    margin: var(--mp-1) 0;
+}
+
+.about > h2 {
+    margin: var(--mp-2) 0;
+}
+
+.skills p {
+    color: var(--text-color);
+}
+
+/* ============ Services ============== */
+
+.services {
+    min-height: 100vh;
+}
+
+.card p {
+    color: var(--text-color);
+}
+
+/* ============ Experiments ============== */
+
+.experiments p {
+    margin: var(--mp-1) 0 var(--mp-3);
+}
+
+.works-experiments figure {
+    position: relative;
+    margin-bottom: var(--mp-small);
+}
+
+.works-experiments figure figcaption {
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background-color: var(--second-transparent-color);
+    padding: var(--mp-small);
+    text-align: left;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity .5s ease-in-out;
+}
+
+.works-experiments figure img:hover  .works-experiments figure figcaption {
+    opacity: 1;
+    visibility: visible;
+}
+
+.works-experiments figure figcaption h3 {
+    margin-bottom: var(--mp-small);
+}
+
+/* ============ Contact ============== */
+
+.contact > h2 {
+    margin-bottom: var(--mp-1);
+}
+
+.contact form [data-input="true"] {
+    width: 100%;
+    background-color: transparent;
+    border: none;
+    border-bottom: 1px solid var(--second-color);
+    color: var(--white-transparent-color);
+    line-height: 2rem;
+    margin: var(--mp-small) 0;
+}
+
+.contact form textarea {
+    border: 1px solid var(--second-color) !important;
+    resize: none;
+}
+
+.contact form input:last-child {
+    margin: var(--mp-small) 0;
+}
+
+/* ============ Footer ============== */
+
+footer {
+    color: var(--text-color);
+    padding: var(--mp-1);
+}
