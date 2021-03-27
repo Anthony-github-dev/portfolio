@@ -106,7 +106,7 @@ main > section {
     align-items: center;
     max-width: 700px;
     min-height: 180px;
-    margin: var(--mp-2) 0;
+    margin: var(--mp-2) auto;
     padding: var(--mp-1) var(--mp-small);
     box-shadow: .25rem .25rem 1rem var(--black-color);
 }
@@ -241,7 +241,7 @@ main > section {
 
 .works-experiments figure {
     position: relative;
-    margin-bottom: var(--mp-small);
+    margin-bottom: var(--mp-1);
 }
 
 .works-experiments figure figcaption {
@@ -273,6 +273,11 @@ main > section {
     margin-bottom: var(--mp-1);
 }
 
+.contact form {
+    max-width: 700px;
+    margin: 0 auto;
+}
+
 .contact form [data-input="true"] {
     width: 100%;
     background-color: transparent;
@@ -297,4 +302,12 @@ main > section {
 footer {
     color: var(--text-color);
     padding: var(--mp-1);
+}
+
+/* ============ @Medias ============== */
+
+@media screen and (min-width: 1200px) {
+    .experiments img {
+        max-width: 80%;
+    }
 }
