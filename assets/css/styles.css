@@ -104,6 +104,7 @@ main > section {
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
+    max-width: 700px;
     min-height: 180px;
     margin: var(--mp-2) 0;
     padding: var(--mp-1) var(--mp-small);
